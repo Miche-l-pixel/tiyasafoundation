@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 currency: 'INR',
                 name: 'Tiyasa Social Welfare Foundation',
                 description: 'Donation to Tiyasa Social Welfare Foundation',
-                image: 'https://miche-l-pixel.github.io/demo-repo/assets/logo.jpg',
+                image: 'https://miche-l-pixel.github.io/tiyasafoundation/assets/logo.jpg',
                 handler: function (response) {
                     // Payment successful
                     alert(
