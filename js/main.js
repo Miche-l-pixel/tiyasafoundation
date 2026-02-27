@@ -167,9 +167,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 key: 'rzp_test_SL8TAla7mMpzDe',
                 amount: amount * 100,              // Razorpay expects paise
                 currency: 'INR',
-                name: 'HopeRise Foundation',
-                description: 'Donation to HopeRise Foundation',
-                image: 'https://miche-l-pixel.github.io/demo-repo/assets/hero.png',
+                name: 'Tiyasa Social Welfare Foundation',
+                description: 'Donation to Tiyasa Social Welfare Foundation',
+                image: 'https://miche-l-pixel.github.io/demo-repo/assets/logo.jpg',
                 handler: function (response) {
                     // Payment successful
                     alert(
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 notes: {
                     purpose: 'Donation',
-                    organization: 'HopeRise Foundation'
+                    organization: 'Tiyasa Social Welfare Foundation'
                 },
                 theme: {
                     color: '#009688'
