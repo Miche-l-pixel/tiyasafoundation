@@ -7,34 +7,34 @@
 
 /* --- Design Tokens --- */
 :root {
-    /* Primary Palette — warm amber/gold tones */
-    --clr-primary-50: #FFF8E1;
-    --clr-primary-100: #FFECB3;
-    --clr-primary-200: #FFE082;
-    --clr-primary-400: #FFCA28;
-    --clr-primary-500: #FFC107;
-    --clr-primary-600: #FFB300;
-    --clr-primary-700: #FFA000;
-    --clr-primary-800: #FF8F00;
+    /* Primary Palette — professional blue */
+    --clr-primary-50: #EFF6FF;
+    --clr-primary-100: #DBEAFE;
+    --clr-primary-200: #BFDBFE;
+    --clr-primary-400: #60A5FA;
+    --clr-primary-500: #3B82F6;
+    --clr-primary-600: #2563EB;
+    --clr-primary-700: #1D4ED8;
+    --clr-primary-800: #1E40AF;
 
-    /* Accent — teal */
-    --clr-accent-400: #26A69A;
-    --clr-accent-500: #009688;
-    --clr-accent-600: #00897B;
-    --clr-accent-700: #00796B;
+    /* Accent — warm orange */
+    --clr-accent-400: #FB923C;
+    --clr-accent-500: #F97316;
+    --clr-accent-600: #EA580C;
+    --clr-accent-700: #C2410C;
 
     /* Neutrals */
-    --clr-dark: #1A1A2E;
-    --clr-dark-2: #16213E;
-    --clr-dark-3: #0F3460;
+    --clr-dark: #1E293B;
+    --clr-dark-2: #1E3A5F;
+    --clr-dark-3: #1E40AF;
     --clr-body: #334155;
     --clr-muted: #64748B;
-    --clr-light: #F1F5F9;
+    --clr-light: #F8FAFC;
     --clr-white: #FFFFFF;
 
     /* Gradient */
-    --gradient-hero: linear-gradient(135deg, rgba(26, 26, 46, 0.88) 0%, rgba(15, 52, 96, 0.82) 100%);
-    --gradient-accent: linear-gradient(135deg, var(--clr-primary-500), var(--clr-accent-500));
+    --gradient-hero: linear-gradient(135deg, rgba(30, 58, 95, 0.90) 0%, rgba(30, 64, 175, 0.85) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--clr-primary-600), var(--clr-accent-500));
     --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
 
     /* Typography */
@@ -66,10 +66,10 @@
     --radius-md: 12px;
     --radius-lg: 20px;
     --radius-full: 50%;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.16);
-    --shadow-glow: 0 4px 30px rgba(0, 150, 136, 0.25);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 4px 30px rgba(59, 130, 246, 0.2);
 
     /* Transitions */
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -196,7 +196,7 @@ h6 {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0, 150, 136, 0.35);
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
 }
 
 .btn-outline {
@@ -218,9 +218,9 @@ h6 {
 }
 
 .btn-accent:hover {
-    background: var(--clr-primary-600);
+    background: var(--clr-accent-600);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 193, 7, 0.3);
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
 }
 
 /* --- Navigation --- */
@@ -235,7 +235,7 @@ h6 {
 }
 
 .navbar.scrolled {
-    background: rgba(26, 26, 46, 0.95);
+    background: rgba(30, 41, 59, 0.95);
     backdrop-filter: blur(20px);
     box-shadow: var(--shadow-md);
     padding: 0.6rem 0;
@@ -502,7 +502,7 @@ h6 {
     transform: translateX(-50%);
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(0, 150, 136, 0.06), transparent 70%);
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.06), transparent 70%);
     pointer-events: none;
 }
 
@@ -607,7 +607,7 @@ h6 {
     content: '';
     position: absolute;
     inset: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1" width="60" height="60"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><rect fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1" width="60" height="60"/></svg>');
     pointer-events: none;
 }
 
@@ -778,9 +778,9 @@ h6 {
 }
 
 .carousel-dot.active {
-    background: var(--clr-accent-500);
+    background: var(--clr-primary-500);
     transform: scale(1.3);
-    box-shadow: 0 0 10px rgba(0, 150, 136, 0.5);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
 .project-card {
@@ -840,7 +840,7 @@ h6 {
 /* --- GET INVOLVED / CTA SECTION --- */
 .cta-section {
     position: relative;
-    background: linear-gradient(135deg, var(--clr-accent-600), var(--clr-dark-3));
+    background: linear-gradient(135deg, var(--clr-primary-700), var(--clr-dark-2));
     overflow: hidden;
 }
 
@@ -851,7 +851,7 @@ h6 {
     right: -20%;
     width: 500px;
     height: 500px;
-    background: rgba(255, 193, 7, 0.12);
+    background: rgba(249, 115, 22, 0.12);
     border-radius: var(--radius-full);
     animation: float 8s ease-in-out infinite;
 }
@@ -928,7 +928,7 @@ h6 {
     display: flex;
     align-items: center;
     gap: 6px;
-    color: var(--clr-accent-500);
+    color: var(--clr-primary-600);
     font-size: var(--fs-small);
     font-weight: var(--fw-semibold);
 }
@@ -986,10 +986,10 @@ h6 {
 }
 
 .amount-btn.active {
-    border-color: var(--clr-accent-500);
-    background: linear-gradient(135deg, rgba(0, 150, 136, 0.08), rgba(0, 150, 136, 0.04));
-    color: var(--clr-accent-600);
-    box-shadow: 0 0 0 1px var(--clr-accent-500);
+    border-color: var(--clr-primary-500);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(59, 130, 246, 0.04));
+    color: var(--clr-primary-700);
+    box-shadow: 0 0 0 1px var(--clr-primary-500);
 }
 
 .donate-custom {
@@ -1031,7 +1031,7 @@ h6 {
 }
 
 .custom-input-wrap input:focus {
-    border-color: var(--clr-accent-500);
+    border-color: var(--clr-primary-500);
 }
 
 .custom-input-wrap input::placeholder {
@@ -1111,7 +1111,7 @@ h6 {
 }
 
 .donor-testimonial {
-    background: rgba(0, 150, 136, 0.04);
+    background: rgba(59, 130, 246, 0.04);
     border-left: 3px solid var(--clr-accent-500);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     padding: var(--space-md);
@@ -1291,7 +1291,7 @@ h6 {
         width: 70%;
         max-width: 320px;
         height: 100vh;
-        background: rgba(26, 26, 46, 0.98);
+        background: rgba(30, 41, 59, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         padding: var(--space-3xl) var(--space-lg);
