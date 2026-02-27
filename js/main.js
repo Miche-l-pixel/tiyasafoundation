@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //     Use rzp_test_... for testing, rzp_live_... for production
             // ============================================================
             const options = {
-                key: 'rzp_test_XXXXXXXXXX',       // ← YOUR KEY HERE
+                key: 'rzp_test_SL8TAla7mMpzDe',
                 amount: amount * 100,              // Razorpay expects paise
                 currency: 'INR',
                 name: 'HopeRise Foundation',
