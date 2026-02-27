@@ -185,29 +185,49 @@
                     <div class="impact-label">Focus Programs</div>
                 </div>
                 <div class="impact-stat">
-                    <div class="impact-number" data-count="2023" data-suffix="">0</div>
+                    <div class="impact-number" data-count="2023" data-suffix="" data-no-comma>0</div>
                     <div class="impact-label">Founded</div>
                 </div>
             </div>
 
-            <!-- Featured Projects -->
-            <div class="impact-projects reveal" id="projects">
-                <div class="project-card">
-                    <img src="assets/food-supplies.jpg" alt="Tiyasa food distribution drive" loading="lazy" />
-                    <div class="project-overlay">
-                        <span class="project-tag">Food Supplies</span>
-                        <h3>Community Food Drive</h3>
-                        <p>Distributing nutritious meals to children and families in need across communities.</p>
-                    </div>
-                </div>
+            <!-- Featured Projects Carousel -->
+            <div class="carousel-section reveal" id="projects">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="carousel-slide">
+                            <div class="project-card">
+                                <img src="assets/food-supplies.jpg" alt="Tiyasa food distribution drive"
+                                    loading="lazy" />
+                                <div class="project-overlay">
+                                    <span class="project-tag">Food Supplies</span>
+                                    <h3>Community Food Drive</h3>
+                                    <p>Distributing nutritious meals to children and families in need across
+                                        communities.</p>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="project-card">
-                    <img src="assets/medical-camp.jpg" alt="Tiyasa free medical camp" loading="lazy" />
-                    <div class="project-overlay">
-                        <span class="project-tag">Medical Camp</span>
-                        <h3>Free Health Check-ups</h3>
-                        <p>Providing free medical examinations and health screenings for the underserved.</p>
+                        <div class="carousel-slide">
+                            <div class="project-card">
+                                <img src="assets/medical-camp.jpg" alt="Tiyasa free medical camp" loading="lazy" />
+                                <div class="project-overlay">
+                                    <span class="project-tag">Medical Camp</span>
+                                    <h3>Free Health Check-ups</h3>
+                                    <p>Providing free medical examinations and health screenings for the underserved.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous slide">
+                        <i class="ph ph-caret-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next slide">
+                        <i class="ph ph-caret-right"></i>
+                    </button>
+
+                    <div class="carousel-dots" id="carouselDots"></div>
                 </div>
             </div>
         </div>

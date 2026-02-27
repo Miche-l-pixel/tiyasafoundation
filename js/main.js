@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         counters.forEach(counter => {
             const target = parseInt(counter.dataset.count, 10);
             const suffix = counter.dataset.suffix || '';
+            const noComma = counter.hasAttribute('data-no-comma');
             const duration = 2000;
             const startTime = performance.now();
 
@@ -66,12 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const easedProgress = easeOutQuart(progress);
                 const current = Math.floor(easedProgress * target);
 
-                counter.textContent = current.toLocaleString() + suffix;
+                counter.textContent = (noComma ? current : current.toLocaleString()) + suffix;
 
                 if (progress < 1) {
                     requestAnimationFrame(update);
                 } else {
-                    counter.textContent = target.toLocaleString() + suffix;
+                    counter.textContent = (noComma ? target : target.toLocaleString()) + suffix;
                 }
             };
 
@@ -115,6 +116,68 @@ document.addEventListener('DOMContentLoaded', () => {
                 f.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
             });
         }, { passive: true });
+    }
+
+    // --- Project Carousel ---
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const dotsContainer = document.getElementById('carouselDots');
+    let currentSlide = 0;
+
+    function updateCarousel() {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active', 'prev', 'next', 'hidden');
+            if (i === currentSlide) {
+                slide.classList.add('active');
+            } else if (i === (currentSlide - 1 + slides.length) % slides.length) {
+                slide.classList.add('prev');
+            } else if (i === (currentSlide + 1) % slides.length) {
+                slide.classList.add('next');
+            } else {
+                slide.classList.add('hidden');
+            }
+        });
+        document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+    }
+
+    function goToSlide(index) {
+        currentSlide = (index + slides.length) % slides.length;
+        updateCarousel();
+    }
+
+    if (slides.length > 0) {
+        // Generate dots
+        if (dotsContainer) {
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            });
+        }
+        updateCarousel();
+        if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+        // Touch swipe
+        let touchStartX = 0;
+        const track = document.getElementById('carouselTrack');
+        if (track) {
+            track.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            track.addEventListener('touchend', (e) => {
+                const diff = touchStartX - e.changedTouches[0].screenX;
+                if (Math.abs(diff) > 50) {
+                    diff > 0 ? goToSlide(currentSlide + 1) : goToSlide(currentSlide - 1);
+                }
+            }, { passive: true });
+        }
     }
 
     // --- Razorpay Donation Checkout ---
