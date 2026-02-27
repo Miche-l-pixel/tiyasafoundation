@@ -29,7 +29,7 @@
                 <li><a href="#impact">Impact</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#involved">Get Involved</a></li>
-                <li><a href="#contact" class="btn btn-primary nav-cta">Donate</a></li>
+                <li><a href="#donate" class="btn btn-primary nav-cta">Donate</a></li>
             </ul>
 
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -220,8 +220,115 @@
                     more communities and transform more lives. Together, we can build a better tomorrow.
                 </p>
                 <div class="cta-actions">
-                    <a href="#contact" class="btn btn-accent">Donate Now <i class="ph ph-heart"></i></a>
-                    <a href="#contact" class="btn btn-outline">Volunteer <i class="ph ph-hand-waving"></i></a>
+                    <a href="#donate" class="btn btn-accent">Donate Now <i class="ph ph-heart"></i></a>
+                    <a href="#donate" class="btn btn-outline">Volunteer <i class="ph ph-hand-waving"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DONATE SECTION ============ -->
+    <section class="donate-section section-padding" id="donate">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="section-label">Support Our Cause</span>
+                <h2 class="section-title">Make a Donation</h2>
+                <p class="section-subtitle">
+                    Your generosity powers our mission. Every rupee goes directly to transforming
+                    communities through education, clean water, and sustainable development.
+                </p>
+            </div>
+
+            <div class="donate-container reveal">
+                <div class="donate-card">
+                    <div class="donate-card-header">
+                        <div class="donate-security">
+                            <i class="ph ph-shield-check"></i>
+                            <span>Secured by Razorpay</span>
+                        </div>
+                        <div class="donate-methods">
+                            <span class="payment-badge">UPI</span>
+                            <span class="payment-badge">Cards</span>
+                            <span class="payment-badge">Net Banking</span>
+                        </div>
+                    </div>
+
+                    <p class="donate-prompt">Select a donation amount</p>
+
+                    <div class="donate-amounts" id="donateAmounts">
+                        <button class="amount-btn" data-amount="500">₹500</button>
+                        <button class="amount-btn active" data-amount="1000">₹1,000</button>
+                        <button class="amount-btn" data-amount="2500">₹2,500</button>
+                        <button class="amount-btn" data-amount="5000">₹5,000</button>
+                    </div>
+
+                    <div class="donate-custom">
+                        <label for="customAmount">Or enter a custom amount (₹)</label>
+                        <div class="custom-input-wrap">
+                            <span class="currency-symbol">₹</span>
+                            <input type="number" id="customAmount" min="1" placeholder="Enter amount" />
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary donate-btn" id="donateBtn">
+                        <i class="ph ph-heart"></i>
+                        Donate Now
+                    </button>
+
+                    <p class="donate-note">
+                        <i class="ph ph-lock-simple"></i>
+                        100% secure payment · Tax-deductible under 80G
+                    </p>
+                </div>
+
+                <div class="donate-info">
+                    <h3>Where Your Money Goes</h3>
+                    <div class="fund-allocation">
+                        <div class="fund-item">
+                            <div class="fund-bar">
+                                <div class="fund-fill" style="width: 45%;"></div>
+                            </div>
+                            <div class="fund-detail">
+                                <span>Education Programs</span>
+                                <strong>45%</strong>
+                            </div>
+                        </div>
+                        <div class="fund-item">
+                            <div class="fund-bar">
+                                <div class="fund-fill" style="width: 25%;"></div>
+                            </div>
+                            <div class="fund-detail">
+                                <span>Clean Water Projects</span>
+                                <strong>25%</strong>
+                            </div>
+                        </div>
+                        <div class="fund-item">
+                            <div class="fund-bar">
+                                <div class="fund-fill" style="width: 20%;"></div>
+                            </div>
+                            <div class="fund-detail">
+                                <span>Healthcare & Relief</span>
+                                <strong>20%</strong>
+                            </div>
+                        </div>
+                        <div class="fund-item">
+                            <div class="fund-bar">
+                                <div class="fund-fill" style="width: 10%;"></div>
+                            </div>
+                            <div class="fund-detail">
+                                <span>Operations</span>
+                                <strong>10%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="donor-testimonial">
+                        <blockquote>
+                            "Donating through HopeRise was seamless. Knowing 90% of my donation directly funds programs
+                            gives me real confidence."
+                        </blockquote>
+                        <cite>— Priya S., Monthly Donor</cite>
+                    </div>
                 </div>
             </div>
         </div>
@@ -279,6 +386,8 @@
         </div>
     </footer>
 
+    <!-- Razorpay Checkout -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script src="js/main.js"></script>
 </body>
 
