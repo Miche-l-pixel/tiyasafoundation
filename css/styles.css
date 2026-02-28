@@ -4,15 +4,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* --- Design Tokens --- */
+
 :root {
-    /* Primary — soft forest green */
+
     --clr-primary: #2F5D50;
     --clr-primary-hover: #264D42;
     --clr-primary-light: rgba(47, 93, 80, 0.07);
     --clr-primary-lighter: rgba(47, 93, 80, 0.04);
 
-    /* Neutrals — warm tones */
+
     --clr-dark: #2A2A2A;
     --clr-body: #4A4A4A;
     --clr-muted: #7A7A72;
@@ -21,7 +21,7 @@
     --clr-card: #FFFFFF;
     --clr-white: #FFFFFF;
 
-    /* Typography */
+
     --ff-main: 'Poppins', sans-serif;
     --fs-display: clamp(2.2rem, 4.5vw, 3.5rem);
     --fs-h1: clamp(1.8rem, 3.5vw, 2.8rem);
@@ -31,7 +31,7 @@
     --fs-small: 0.875rem;
     --fs-xs: 0.75rem;
 
-    /* Spacing — generous */
+
     --space-xs: 0.5rem;
     --space-sm: 1rem;
     --space-md: 1.5rem;
@@ -40,7 +40,7 @@
     --space-2xl: 5rem;
     --space-3xl: 7rem;
 
-    /* Borders & Shadows — subtle */
+
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
@@ -49,14 +49,14 @@
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.06);
 
-    /* Transitions */
+
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: 0.2s var(--ease-out);
     --transition-normal: 0.35s var(--ease-out);
     --transition-slow: 0.5s var(--ease-out);
 }
 
-/* --- Reset & Base --- */
+
 *,
 *::before,
 *::after {
@@ -120,7 +120,7 @@ h6 {
     border: 0;
 }
 
-/* --- Utility --- */
+
 .container {
     width: 100%;
     max-width: 1100px;
@@ -136,7 +136,7 @@ h6 {
     text-align: center;
 }
 
-/* --- Buttons --- */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -183,7 +183,7 @@ h6 {
     transform: translateY(-1px);
 }
 
-/* --- Navigation --- */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -281,7 +281,7 @@ h6 {
     background: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Mobile Toggle */
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -312,7 +312,7 @@ h6 {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* --- HERO — warm, emotional, imagery-forward --- */
+
 .hero {
     position: relative;
     min-height: 100vh;
@@ -333,7 +333,7 @@ h6 {
     object-fit: cover;
 }
 
-/* Lighter overlay so imagery shines through */
+
 .hero-overlay {
     position: absolute;
     inset: 0;
@@ -365,7 +365,7 @@ h6 {
     animation: fadeInUp 0.8s var(--ease-out) 0.2s both;
 }
 
-/* Green blinking pulse — shows life/progress */
+
 .hero-badge .pulse {
     width: 9px;
     height: 9px;
@@ -448,12 +448,11 @@ h6 {
     margin-top: 4px;
 }
 
-/* Remove floating orbs — clean, minimal */
 .hero-float {
     display: none;
 }
 
-/* --- SECTION HEADERS --- */
+
 .section-header {
     margin-bottom: var(--space-xl);
 }
@@ -483,7 +482,7 @@ h6 {
     line-height: 1.75;
 }
 
-/* --- MISSION --- light, breathable --- */
+
 .mission {
     background: var(--clr-card);
     position: relative;
@@ -541,7 +540,7 @@ h6 {
     font-size: var(--fs-small);
 }
 
-/* --- IMPACT — light, open, no dark boxes --- */
+
 .impact {
     background: var(--clr-bg);
     color: var(--clr-dark);
@@ -596,7 +595,7 @@ h6 {
     font-weight: 500;
 }
 
-/* --- PROJECT CAROUSEL --- */
+
 .carousel-section {
     margin-top: var(--space-xl);
 }
@@ -723,7 +722,7 @@ h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
     transition: transform var(--transition-slow);
 }
 
@@ -766,7 +765,7 @@ h6 {
     font-size: var(--fs-small);
 }
 
-/* --- CTA — warm, inviting, not corporate --- */
+
 .cta-section {
     position: relative;
     background: var(--clr-primary);
@@ -805,7 +804,7 @@ h6 {
     flex-wrap: wrap;
 }
 
-/* --- DONATE — clean, trustworthy --- */
+
 .donate-section {
     background: var(--clr-card);
     position: relative;
@@ -970,7 +969,7 @@ h6 {
     text-align: center;
 }
 
-/* Donate Info */
+
 .donate-info {
     padding-top: var(--space-sm);
 }
@@ -1044,7 +1043,7 @@ h6 {
     font-weight: 500;
 }
 
-/* --- FOOTER — warm dark, not harsh --- */
+
 .footer {
     background: #2A2A2A;
     color: rgba(255, 255, 255, 0.6);
@@ -1118,7 +1117,7 @@ h6 {
     color: rgba(255, 255, 255, 0.25);
 }
 
-/* --- ANIMATIONS --- */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1172,7 +1171,7 @@ h6 {
     transition: all 0.4s var(--ease-out);
 }
 
-/* --- RESPONSIVE --- */
+
 @media (max-width: 1024px) {
     .mission-grid {
         grid-template-columns: repeat(2, 1fr);

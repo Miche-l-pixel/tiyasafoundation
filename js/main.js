@@ -1,16 +1,14 @@
-/* ===================================================
-   HopeRise Foundation — Interactivity
-   =================================================== */
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Navbar scroll effect ---
+
     const navbar = document.querySelector('.navbar');
     const handleScroll = () => {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // --- Mobile nav toggle ---
+
     const toggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
@@ -21,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
         });
 
-        // Close mobile nav on link click
+
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 toggle.classList.remove('active');
@@ -31,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Scroll-triggered reveal animations ---
+
     const revealEls = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -44,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealEls.forEach(el => revealObserver.observe(el));
 
-    // --- Animated counters ---
+
     const counters = document.querySelectorAll('[data-count]');
     let countersAnimated = false;
 
@@ -91,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         statsObserver.observe(statsSection);
     }
 
-    // --- Smooth scroll for anchor links ---
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', e => {
             const targetId = anchor.getAttribute('href');
@@ -105,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Parallax on hero floats ---
+
     const floats = document.querySelectorAll('.hero-float');
     if (floats.length && window.innerWidth > 768) {
         window.addEventListener('mousemove', e => {
@@ -118,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
-    // --- Project Carousel ---
+
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.getElementById('carouselPrev');
     const nextBtn = document.getElementById('carouselNext');
@@ -149,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (slides.length > 0) {
-        // Generate dots
+
         if (dotsContainer) {
             slides.forEach((_, i) => {
                 const dot = document.createElement('button');
@@ -164,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
         if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
 
-        // Touch swipe
+
         let touchStartX = 0;
         const track = document.getElementById('carouselTrack');
         if (track) {
@@ -180,13 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Razorpay Donation Checkout ---
+
     const amountBtns = document.querySelectorAll('.amount-btn');
     const customAmountInput = document.getElementById('customAmount');
     const donateBtn = document.getElementById('donateBtn');
-    let selectedAmount = 1000; // Default ₹1,000
+    let selectedAmount = 1000;
 
-    // Amount button selection
+
     if (amountBtns.length) {
         amountBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -198,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Custom amount overrides preset
+
     if (customAmountInput) {
         customAmountInput.addEventListener('input', () => {
             const val = parseInt(customAmountInput.value, 10);
@@ -209,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Donate button → open Razorpay checkout
+
     if (donateBtn) {
         donateBtn.addEventListener('click', () => {
             const amount = customAmountInput && customAmountInput.value
@@ -228,13 +226,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // ============================================================
             const options = {
                 key: 'rzp_test_SL8TAla7mMpzDe',
-                amount: amount * 100,              // Razorpay expects paise
+                amount: amount * 100,
                 currency: 'INR',
                 name: 'Tiyasa Social Welfare Foundation',
                 description: 'Donation to Tiyasa Social Welfare Foundation',
                 image: 'https://miche-l-pixel.github.io/tiyasafoundation/assets/logo.jpg',
                 handler: function (response) {
-                    // Payment successful
                     alert(
                         '🎉 Thank you for your generous donation of ₹' +
                         amount.toLocaleString() +
