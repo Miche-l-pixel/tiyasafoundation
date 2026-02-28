@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     organization: 'Tiyasa Social Welfare Foundation'
                 },
                 theme: {
-                    color: '#1F3A5F'
+                    color: '#2F5D50'
                 },
                 modal: {
                     ondismiss: function () {
